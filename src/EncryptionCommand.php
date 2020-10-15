@@ -44,18 +44,18 @@ class EncryptionCommand extends Command
         }
 
         if (empty($this->option('source'))) {
-            $sources = config('source-encrypter.source', ['app', 'database', 'routes']);
+            $sources = config('encrypt.source', ['app', 'database', 'routes']);
         } else {
             $sources = $this->option('source');
             $sources = explode(',', $sources);
         }
         if (empty($this->option('destination'))) {
-            $destination = config('source-encrypter.destination', 'encrypted');
+            $destination = config('encrypt.destination', 'encrypted');
         } else {
             $destination = $this->option('destination');
         }
         if (empty($this->option('keylength'))) {
-            $keyLength = config('source-encrypter.key_length', 6);
+            $keyLength = config('encrypt.key_length', 6);
         } else {
             $keyLength = $this->option('keylength');
         }
