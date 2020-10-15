@@ -10,9 +10,8 @@ At the first, You have to install phpBolt.
 ## Step 2
 Require the package with composer using the following command:
 
-composer require --dev sbamtr/laravel-source-encrypter
+composer require nextbytetz/laravel_encryption
 ## Step 3
-For Laravel
 The service provider will automatically get registered. Or you may manually add the service provider in your config/app.php file:
 
 'providers' => [
