@@ -1,0 +1,37 @@
+{
+    "name": "nextbyte/laravel_encryption",
+    "description": "performing data encryption for the laravel projects",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "francistito",
+            "email": "francistito07@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "illuminate/console": "^5.5|^6|^7|^8",
+        "illuminate/support": "^5.5|^6|^7|^8",
+        "ext-bolt": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nextbyte\\Encryption\\": "src/"
+        }
+
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nextbyte\\Encryption\\SourceEncryptServiceProvider"
+            ]
+        }
+    }
+}
