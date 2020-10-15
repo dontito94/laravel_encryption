@@ -1,5 +1,5 @@
 {
-    "name": "nextbyte/laravel_encryption",
+    "name": "nextbytetz/laravel_encryption",
     "description": "performing data encryption for the laravel projects",
     "type": "library",
     "license": "MIT",
