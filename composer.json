@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Nextbyte\\Encryption\\EncryptServiceProvider"
+                "Nextbyte\\Encryption\\EncryptionServiceProvider"
             ]
         }
     }
