@@ -18,7 +18,7 @@ The service provider will automatically get registered. Or you may manually add 
 ```bash
 'providers' => [
     // ...
-    \Nextbyte\Encryption\EncryptionServiceProvider::class,
+    Nextbyte\Encryption\EncryptionServiceProvider::class,
 ];
 
 ```
