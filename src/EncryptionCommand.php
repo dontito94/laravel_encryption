@@ -60,6 +60,14 @@ class EncryptionCommand extends Command
             $keyLength = $this->option('keylength');
         }
 
+//        if (empty($this->option('move'))) {
+//
+//            $keyLength = config('encrypt.key_length', 6);
+//        } else {
+//
+//            shell_exec('cd .. && zip ');
+//        }
+
         if (!$this->option('force')
             && File::exists(base_path($destination))
             && !$this->confirm("The directory $destination already exists. Delete directory?")

@@ -10,6 +10,7 @@ class EncryptionServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->commands(EncryptionCommand::class);
+        $this->commands(ZipCommand::class);
     }
 
 
