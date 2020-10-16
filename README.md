@@ -29,7 +29,7 @@ The service provider will automatically get registered. Or you may manually add 
 You can publish the config file with this following command:
 
 ```bash
-php artisan vendor:publish --provider="\Nextbyte\Encryption\EncryptionServiceProvider"
+php artisan vendor:publish --provider="Nextbyte\Encryption\EncryptionServiceProvider"
 ```
 
 ## Usage
@@ -37,4 +37,8 @@ Open terminal in project root and run this command:
 ```bash
 php artisan encrypt-source
 ```
+=> You can zip and move encrypted files to new destination
 
+```bash
+php artisan move-destination
+```
