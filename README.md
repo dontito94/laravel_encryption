@@ -39,7 +39,6 @@ php artisan vendor:publish --provider="Nextbyte\Encryption\EncryptionServiceProv
     'destination' => 'encrypted', // Destination path
     'key_length'  => 6, // Encryption key length
     'zip_filename'  => 'folders.zip', // zip filename
-    'zipped_destination'  => '/home/blessedkono/encrypted/folders.zip', // zip filename
     'extract_destination'  => '/home/blessedkono/encrypted/', // destination project path
 ```
   
