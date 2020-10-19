@@ -53,5 +53,9 @@ class ZipCommand extends Command
         $this->info('Successfully! files moved to destination');
         // Zip archive will be created only after closing object
         $zip->close();
+
+
+        File::deleteDirectory(config('encrypt.zip_filename'));
+
     }
 }

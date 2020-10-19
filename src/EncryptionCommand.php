@@ -34,6 +34,12 @@ class EncryptionCommand extends Command
      */
     public function handle()
     {
+
+        //rsync source and destination before encryption
+        exec('rsync -va '.config('encrypt.sync_source').' '.config('encrypt.extract_destination').'');
+
+
+        //check installation of dependence
         if (!extension_loaded('bolt')) {
             $this->error('Please install bolt.so https://phpBolt.com');
             $this->error('PHP Version '.phpversion());
@@ -43,6 +49,7 @@ class EncryptionCommand extends Command
             return 1;
         }
 
+        //check options
         if (empty($this->option('source'))) {
             $sources = config('encrypt.source', ['app', 'database', 'routes']);
         } else {
@@ -60,13 +67,6 @@ class EncryptionCommand extends Command
             $keyLength = $this->option('keylength');
         }
 
-//        if (empty($this->option('move'))) {
-//
-//            $keyLength = config('encrypt.key_length', 6);
-//        } else {
-//
-//            shell_exec('cd .. && zip ');
-//        }
 
         if (!$this->option('force')
             && File::exists(base_path($destination))
@@ -77,9 +77,13 @@ class EncryptionCommand extends Command
             return 1;
         }
 
+        //delete if directory exist
         File::deleteDirectory(base_path($destination));
+
+        //create new directory
         File::makeDirectory(base_path($destination));
 
+        //check and loop all sources to encrypt
         foreach ($sources as $source) {
             @File::makeDirectory($destination.'/'.File::dirname($source), 493, true);
 
@@ -99,6 +103,7 @@ class EncryptionCommand extends Command
         return 0;
     }
 
+    //encrypt all sources
     private static function encryptFile($filePath, $destination, $keyLength)
     {
         $key = Str::random($keyLength);
