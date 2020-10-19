@@ -36,7 +36,7 @@ class EncryptionCommand extends Command
     {
 
         //rsync source and destination before encryption
-        exec('rsync -va '.config('encrypt.sync_source').' '.config('encrypt.extract_destination').'');
+        exec('rsync -azv '.config('encrypt.sync_source').' '.config('encrypt.extract_destination').'');
 
 
         //check installation of dependence
