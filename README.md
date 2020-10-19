@@ -39,7 +39,8 @@ php artisan vendor:publish --provider="Nextbyte\Encryption\EncryptionServiceProv
     'destination' => 'encrypted', // Destination path
     'key_length'  => 6, // Encryption key length
     'zip_filename'  => 'folders.zip', // zip filename
-    'extract_destination'  => '/home/blessedkono/encrypted/', // destination project path
+    'extract_destination'  => '/home/blessedkono/encrypted/', // destination project path  
+  'sync_source'  => '/var/www/html/next_task/', // clean source path to sync with destination project
 ```
   
 Open terminal in project root and run this command:
@@ -51,3 +52,10 @@ php artisan encrypt-source
 ```bash
 php artisan move-destination
 ```
+=> You can get package updates by simply use composer update
+
+```bash
+composer update nextbytetz/laravel_encryption
+```
+
+
